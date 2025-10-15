@@ -191,7 +191,7 @@ java -jar target/login-backend-1.0.0.jar
 
 Acceder en:
 
-Interfaz Web: http://localhost:8080/index.html (modificar URL del backend primero)
+Interfaz Web: index.html
 API REST: http://localhost:8080/api/v1/status
 
 Despliegue en AWS
