@@ -355,3 +355,13 @@ Proyecto: https://github.com/Cristian5124/Secure-Login
 ## Proyecto Académico
 
 Este proyecto fue desarrollado como parte del curso de Arquitecturas Empresariales (AREP), demostrando la implementación de arquitecturas distribuidas seguras en la nube de AWS con Spring Boot y Apache HTTP Server.
+
+## Demostraciones
+<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/c238ab4d-2824-4276-a39e-143f68eae15c" />
+<img width="975" height="605" alt="image" src="https://github.com/user-attachments/assets/1fd53248-e7d6-446b-b75a-05e019f96fe4" />
+<img width="975" height="606" alt="image" src="https://github.com/user-attachments/assets/fda58ced-257f-4ddf-961c-cdb4e09ff4d2" />
+
+https://github.com/user-attachments/assets/8e40dcca-56b1-4826-a4f3-4ce98d3893f8
+
+
+
