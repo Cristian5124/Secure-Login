@@ -58,20 +58,21 @@ Flujo de Datos
 
 ## Despliegue en AWS
 
-<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/c238ab4d-2824-4276-a39e-143f68eae15c" />
+<img width="1852" height="961" alt="image" src="https://github.com/user-attachments/assets/c9ed488d-c74e-4202-b326-e07c66cdf44e" />
 
-<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/c238ab4d-2824-4276-a39e-143f68eae15c" />
+<img width="1845" height="960" alt="image" src="https://github.com/user-attachments/assets/ebbab3cc-f125-489d-97c1-1af9460c6845" />
 
-Demostración en Vivo
+#### Demostración en Vivo
 
-https://github.com/user-attachments/assets/7622cdf3-c9b4-4c3c-9b9d-8d9ed7ffb402
+https://github.com/user-attachments/assets/d95be671-6562-47b9-8c06-3e0a793a0cb6
 
-Aplicación Web: https://35.172.221.204.nip.io <br><br>
-<img width="975" height="606" alt="image" src="https://github.com/user-attachments/assets/fda58ced-257f-4ddf-961c-cdb4e09ff4d2" />
+#### Aplicación Web: https://35.172.221.204.nip.io
 
-API REST: https://54.84.230.69.nip.io:8443/api/v1/status <br><br>
+<img width="1848" height="1140" alt="image" src="https://github.com/user-attachments/assets/9b4cf353-faa5-45ab-9070-6b939690ac67" />
 
-<img width="975" height="605" alt="image" src="https://github.com/user-attachments/assets/1fd53248-e7d6-446b-b75a-05e019f96fe4" />
+#### API REST: https://54.84.230.69.nip.io:8443/api/v1/status
+
+<img width="1848" height="1138" alt="image" src="https://github.com/user-attachments/assets/0d821cb8-1a49-460f-84ed-e013f95e2e6b" />
 
 Nota: Los certificados SSL son autofirmados. Tu navegador mostrará una advertencia de seguridad. Haz clic en "Avanzado" y luego "Continuar al sitio" para acceder.
 
