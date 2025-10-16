@@ -37,7 +37,7 @@ Producción AWS
 │  │      EC2 Instance   │    │            EC2 Instance         │ │
 │  │   Apache Frontend   │◄──►│         Spring Boot API         │ │
 │  │   Port: 80, 443     │    │       Port: 8080, 8443          │ │
-│  │   54.235.36.56      │    │        54.208.125.139           │ │
+│  │   35.172.221.204    │    │        54.84.230.69             │ │
 │  └─────────────────────┘    └─────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -58,11 +58,18 @@ Flujo de Datos
 
 ## Despliegue en AWS
 
+<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/c238ab4d-2824-4276-a39e-143f68eae15c" />
+
 Demostración en Vivo
 
-Aplicación Web: https://54.235.36.56
+https://github.com/user-attachments/assets/7622cdf3-c9b4-4c3c-9b9d-8d9ed7ffb402
 
-API REST: https://54.208.125.139:8443/api/v1/status
+Aplicación Web: https://35.172.221.204.nip.io <br><br>
+<img width="975" height="606" alt="image" src="https://github.com/user-attachments/assets/fda58ced-257f-4ddf-961c-cdb4e09ff4d2" />
+
+API REST: https://54.84.230.69.nip.io:8443/api/v1/status <br><br>
+
+<img width="975" height="605" alt="image" src="https://github.com/user-attachments/assets/1fd53248-e7d6-446b-b75a-05e019f96fe4" />
 
 Nota: Los certificados SSL son autofirmados. Tu navegador mostrará una advertencia de seguridad. Haz clic en "Avanzado" y luego "Continuar al sitio" para acceder.
 
@@ -80,9 +87,9 @@ Arquitectura AWS
 │  │  SSL Certificate    │    │  PKCS12 Keystore                │ │
 │  │  Amazon Linux 2023  │    │  Java 11                        │ │
 │  │                     │    │  Amazon Linux 2023              │ │
-│  │  Public IP:         │    │                                 │ │
-│  │  54.235.36.56       │    │  Public IP:                     │ │
-│  │                     │    │  54.208.125.139                 │ │
+│  │  Public IP:         │    │  Public IP:                     │ │
+│  │  35.172.221.204     │    │  Public IP:                     │ │
+│  │                     │    │  54.84.230.69                   │ │
 │  └─────────────────────┘    └─────────────────────────────────┘ │
 │           │                                                     │
 │           ▼                                                     │
@@ -101,19 +108,21 @@ Instancia EC2 - Apache:
 
 Tipo de instancia: t2.micro (1 vCPU, 1 GB de RAM)
 AMI: Amazon Linux 2023
-IP pública: 54.235.36.56
+IP pública: 35.172.221.204
+Dominio: 35.172.221.204.nip.io
 Región: us-east-1 (Virginia)
-Software: Apache HTTP Server 2.4
+Software: Apache HTTP Server 2.4, Let's Encrypt SSL
 Puertos: 22 (SSH), 80 (HTTP), 443 (HTTPS)
 
 Instancia EC2 - Spring Boot:
 
 Tipo de instancia: t2.micro (1 vCPU, 1 GB de RAM)
 AMI: Amazon Linux 2023
-IP pública: 54.208.125.139
+IP pública: 54.84.230.69
+Dominio: 54.84.230.69.nip.io
 Región: us-east-1 (Virginia)
-Software: Java 11, Maven 3.8+
-Puertos: 22 (SSH), 8080 (HTTP), 8443 (HTTPS)
+Software: Java 11, Maven 3.8+, Let's Encrypt SSL
+Puertos: 22 (SSH), 80 (HTTP), 8080 (HTTP), 8443 (HTTPS)
 
 ## API Endpoints
 
@@ -124,7 +133,7 @@ Puertos: 22 (SSH), 8080 (HTTP), 8443 (HTTPS)
 
 ### Ejemplo de Request - Login
 ```bash
-curl -X POST https://54.208.125.139:8443/api/v1/login \
+curl -X POST https://54.84.230.69.nip.io:8443/api/v1/login \
   -H "Content-Type: application/json" \
   -d '{
     "username": "admin",
@@ -209,7 +218,7 @@ Key pair: Descargar archivo .pem
 Conectar por SSH
 
 ```bash
-ssh -i "your-key.pem" ec2-user@54.235.36.56
+ssh -i "your-key.pem" ec2-user@35.172.221.204
 ```
 
 2. Configuración de Servidor Apache
@@ -232,7 +241,8 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
   -out /etc/pki/tls/certs/apache-selfsigned.crt
 
 # Subir frontend
-scp -i "your-key.pem" index.html ec2-user@54.235.36.56:/home/ec2-user/
+```bash
+scp -i "your-key.pem" index.html ec2-user@35.172.221.204:/home/ec2-user/
 sudo cp /home/ec2-user/index.html /var/www/html/
 
 # Reiniciar Apache
@@ -355,13 +365,3 @@ Proyecto: https://github.com/Cristian5124/Secure-Login
 ## Proyecto Académico
 
 Este proyecto fue desarrollado como parte del curso de Arquitecturas Empresariales (AREP), demostrando la implementación de arquitecturas distribuidas seguras en la nube de AWS con Spring Boot y Apache HTTP Server.
-
-## Demostraciones
-<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/c238ab4d-2824-4276-a39e-143f68eae15c" />
-<img width="975" height="605" alt="image" src="https://github.com/user-attachments/assets/1fd53248-e7d6-446b-b75a-05e019f96fe4" />
-<img width="975" height="606" alt="image" src="https://github.com/user-attachments/assets/fda58ced-257f-4ddf-961c-cdb4e09ff4d2" />
-
-https://github.com/user-attachments/assets/8e40dcca-56b1-4826-a4f3-4ce98d3893f8
-
-
-
