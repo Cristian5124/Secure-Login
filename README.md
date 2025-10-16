@@ -60,6 +60,8 @@ Flujo de Datos
 
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/c238ab4d-2824-4276-a39e-143f68eae15c" />
 
+<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/c238ab4d-2824-4276-a39e-143f68eae15c" />
+
 Demostración en Vivo
 
 https://github.com/user-attachments/assets/7622cdf3-c9b4-4c3c-9b9d-8d9ed7ffb402
